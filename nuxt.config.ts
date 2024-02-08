@@ -2,6 +2,6 @@
 export default defineNuxtConfig({
   components: true,
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-swiper"],
   css: ["~/assets/css/main.css"],
 });
