@@ -19,8 +19,8 @@
         disableOnInteraction: true,
       }"
     >
-      <SwiperSlide v-for="slide in 10" :key="slide">
-        <img src="/img/octant_douro/menu.png" alt="Discover Nuxt 3" />
+      <SwiperSlide v-for="item in data" :key="item">
+        <img :src="`/img/${item.hotel}/menu.png`" :alt="item.hotel" />
       </SwiperSlide>
     </Swiper>
     <footer>
@@ -31,6 +31,17 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+import conf from "../conf";
+import content from "../content/content.json";
+
+const { data } = await useAsyncData(
+  "menu",
+  () => content.pt.menu
+  //queryContent(conf.CONTENT).findOne()
+);
+</script>
 
 <style scoped>
 /* .container {
