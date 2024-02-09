@@ -4,15 +4,6 @@
     "pt",
     "en"
   ],
-  "custom-object": {
-    "custom-line": {
-      ":name": "foo",
-      ":type": "line"
-    },
-    "custom-text": {
-      ":type": "text"
-    }
-  },
   "menu": {
     ":items": {
       "hotel": {
@@ -42,7 +33,7 @@
       },
       "contacts": {
         ":type": "text",
-        ":name": "Facts & Figures",
+        ":name": "Contacts",
         ":richtext": true
       }
     }
