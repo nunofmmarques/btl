@@ -2,6 +2,27 @@
   "pt": {
     "menu": [
       {
+        "hotel": "octant_vila_monte"
+      },
+      {
+        "hotel": "octant_santiago"
+      },
+      {
+        "hotel": "octant_praia_verde"
+      },
+      {
+        "hotel": "octant_ponta_delgada"
+      },
+      {
+        "hotel": "octant_lousa"
+      },
+      {
+        "hotel": "octant_furnas"
+      },
+      {
+        "hotel": "octant_evora"
+      },
+      {
         "hotel": "octant_douro"
       }
     ],
@@ -17,6 +38,13 @@
   },
   "en": {
     "menu": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
       {
         "hotel": ""
       }
