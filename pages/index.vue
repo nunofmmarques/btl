@@ -2,8 +2,7 @@
   <div class="container">
     <header>
       <h1>
-        <span>Discovery</span> hotel <br />
-        managment
+        <img src="/img/logo_DHM.png" class="h-14 3xl:h-28" alt="logo" />
       </h1>
       <div>
         <h2 class="serif">À Descoberta de Portugal</h2>
@@ -20,7 +19,9 @@
       }"
     >
       <SwiperSlide v-for="item in data" :key="item">
-        <img :src="`/img/${item.hotel}/menu.png`" :alt="item.hotel" />
+        <a :href="item.hotel">
+          <img :src="`/img/${item.hotel}/menu.png`" :alt="item.hotel" />
+        </a>
       </SwiperSlide>
     </Swiper>
     <footer>
@@ -52,27 +53,20 @@ const { data } = await useAsyncData(
 } */
 
 header {
-  @apply flex justify-between items-center py-3 mb-5;
-
-  h1 {
-    @apply uppercase text-3xl tracking-tight;
-    span {
-      @apply font-bold;
-    }
-  }
+  @apply flex justify-between items-center py-3 mb-5 3xl:mb-20;
 
   h2 {
-    @apply text-2xl text-right;
+    @apply text-2xl text-right 3xl:text-6xl;
   }
 
   h3 {
-    @apply text-sm text-right font-semibold;
+    @apply text-sm text-right font-semibold 3xl:text-4xl mt-5;
   }
 }
 
 footer {
   p {
-    @apply text-[#B4B4B4] text-center font-thin mt-5;
+    @apply text-[#B4B4B4] text-center font-thin mt-5 3xl:mt-16 3xl:text-4xl;
   }
 }
 
