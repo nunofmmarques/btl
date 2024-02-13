@@ -2,6 +2,27 @@
   "pt": {
     "menu": [
       {
+        "hotel": "villa_c"
+      },
+      {
+        "hotel": "the_patio"
+      },
+      {
+        "hotel": "ramada"
+      },
+      {
+        "hotel": "monte_real"
+      },
+      {
+        "hotel": "eden"
+      },
+      {
+        "hotel": "dolce_campo_real"
+      },
+      {
+        "hotel": "crown_plaza"
+      },
+      {
         "hotel": "octant_vila_monte"
       },
       {
@@ -38,6 +59,13 @@
   },
   "en": {
     "menu": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
       {},
       {},
       {},
