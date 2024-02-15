@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   app: {
     baseURL: "/btl/", // baseURL: '/<repository>/'
+    buildAssetsDir: "/assets/",
   },
   components: true,
   devtools: { enabled: true },

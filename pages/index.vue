@@ -2,7 +2,7 @@
   <div class="container">
     <header>
       <h1>
-        <img src="/btl/img/logo_DHM.png" class="h-14 3xl:h-28" alt="logo" />
+        <img src="~/assets/img/logo_DHM.png" class="h-14 3xl:h-28" alt="logo" />
       </h1>
       <div>
         <h2 class="serif">À Descoberta de Portugal</h2>
@@ -20,7 +20,10 @@
     >
       <SwiperSlide v-for="item in data" :key="item">
         <a :href="item.hotel">
-          <img :src="`/btl/img/${item.hotel}/menu.png`" :alt="item.hotel" />
+          <img
+            :src="useAsset('img/' + item.hotel + '/menu.png')"
+            :alt="item.hotel"
+          />
         </a>
       </SwiperSlide>
     </Swiper>
@@ -42,6 +45,15 @@ const { data } = await useAsyncData(
   () => content.pt.menu
   //queryContent(conf.CONTENT).findOne()
 );
+
+function useAsset(path) {
+  const assets = import.meta.glob("~/assets/img/**", {
+    eager: true,
+    import: "default",
+  });
+  // @ts-expect-error: wrong type info
+  return assets["/assets/" + path];
+}
 </script>
 
 <style scoped>

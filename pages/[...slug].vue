@@ -3,7 +3,7 @@
     <div class="h-screen flex flex-row">
       <div class="col col-1">
         <div>
-          <img :src="`/btl/img/${hotel}/logo.png`" :alt="hotel" />
+          <img :src="useAsset('img/' + hotel + '/logo.png')" :alt="hotel" />
 
           <ul class="serif">
             <li
@@ -141,7 +141,7 @@
               ></div>
             </div>
             <div class="col-span-2">
-              <img :src="`/btl/img/${hotel}/1.png`" :alt="hotel" />
+              <img :src="useAsset('img/' + hotel + '/1.png')" :alt="hotel" />
             </div>
           </div>
         </Transition>
@@ -174,13 +174,16 @@
               ></div>
             </div>
             <div class="col-span-2">
-              <img :src="`/btl/img/${hotel}/2.png`" :alt="hotel" />
+              <img :src="useAsset('img/' + hotel + '/2.png')" :alt="hotel" />
             </div>
           </div>
         </Transition>
         <Transition>
           <div v-if="tabOpened === 2" class="h-full">
-            <img :src="`/btl/img/${hotel}/galeria.png`" :alt="hotel" />
+            <img
+              :src="useAsset('img/' + hotel + '/galeria.png')"
+              :alt="hotel"
+            />
           </div>
         </Transition>
       </div>
@@ -218,6 +221,15 @@ onMounted(() => {
     hotel.value
   )[0];
 });
+
+function useAsset(path) {
+  const assets = import.meta.glob("~/assets/img/**", {
+    eager: true,
+    import: "default",
+  });
+  // @ts-expect-error: wrong type info
+  return assets["/assets/" + path];
+}
 </script>
 
 <style scoped>
