@@ -35,6 +35,10 @@
         ":type": "text",
         ":name": "Contacts",
         ":richtext": true
+      },
+      "video": {
+        ":type": "line",
+        ":name": "video"
       }
     }
   }
