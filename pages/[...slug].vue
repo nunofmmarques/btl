@@ -3,7 +3,7 @@
     <div class="h-screen flex flex-row">
       <div class="col col-1">
         <div>
-          <img :src="`/img/${hotel}/logo.png`" :alt="hotel" />
+          <img :src="`/btl/img/${hotel}/logo.png`" :alt="hotel" />
 
           <ul class="serif">
             <li
@@ -141,7 +141,7 @@
               ></div>
             </div>
             <div class="col-span-2">
-              <img :src="`/img/${hotel}/1.png`" :alt="hotel" />
+              <img :src="`/btl/img/${hotel}/1.png`" :alt="hotel" />
             </div>
           </div>
         </Transition>
@@ -174,13 +174,13 @@
               ></div>
             </div>
             <div class="col-span-2">
-              <img :src="`/img/${hotel}/2.png`" :alt="hotel" />
+              <img :src="`/btl/img/${hotel}/2.png`" :alt="hotel" />
             </div>
           </div>
         </Transition>
         <Transition>
           <div v-if="tabOpened === 2" class="h-full">
-            <img :src="`/img/${hotel}/galeria.png`" :alt="hotel" />
+            <img :src="`/btl/img/${hotel}/galeria.png`" :alt="hotel" />
           </div>
         </Transition>
       </div>
