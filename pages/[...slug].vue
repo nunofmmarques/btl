@@ -1,4 +1,7 @@
 <template>
+  <Head>
+    <Title>{{ hotelData.title }}- DHM</Title>
+  </Head>
   <div class="container">
     <div class="h-screen flex flex-row">
       <div class="col col-1">
@@ -69,6 +72,7 @@
             <li
               class="btn"
               :class="{ 'bg-gray-300': tabOpened === 3 }"
+              v-if="hotelData.video"
               @click="tabOpened = 3"
             >
               Video
@@ -186,6 +190,19 @@
             />
           </div>
         </Transition>
+        <Transition>
+          <div v-if="tabOpened === 3" class="h-full relative">
+            <iframe
+              :src="
+                hotelData.video + '?autoplay=1&portrait=false&controls=0&loop=1'
+              "
+              class="absolute top-0 left-0 w-full h-full"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </Transition>
       </div>
     </div>
   </div>
@@ -220,6 +237,12 @@ onMounted(() => {
     "hotel",
     hotel.value
   )[0];
+
+  useHead({
+    // as a string,
+    // where `%s` is replaced with the title
+    title: hotelData.title,
+  });
 });
 
 function useAsset(path) {
@@ -274,5 +297,9 @@ function useAsset(path) {
 
 .btn_back {
   @apply bg-black text-white font-bold w-fit text-base uppercase pr-10 pl-1 gap-2 hover:bg-gray-800 3xl:text-3xl;
+}
+#player {
+  height: 100% !important;
+  background-color: rgb(241, 241, 241) !important;
 }
 </style>

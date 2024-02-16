@@ -1,4 +1,7 @@
 <template>
+  <Head>
+    <Title>DHM</Title>
+  </Head>
   <div class="container">
     <header>
       <h1>
@@ -72,7 +75,7 @@ header {
   }
 
   h3 {
-    @apply text-sm text-right font-semibold 3xl:text-4xl mt-5;
+    @apply text-sm text-right font-semibold 3xl:text-4xl 3xl:mt-5;
   }
 }
 
