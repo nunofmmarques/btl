@@ -25,7 +25,7 @@
 }
 
 body {
-  @apply flex h-screen w-screen bg-blue-900 overflow-hidden;
+  @apply flex h-screen w-screen bg-slate-50 overflow-hidden;
   font-family: "Work Sans", sans-serif;
 }
 

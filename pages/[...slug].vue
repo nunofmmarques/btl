@@ -151,7 +151,7 @@
         </Transition>
         <Transition>
           <div v-if="tabOpened === 1" class="grid grid-cols-4 h-full">
-            <div class="p-10 pr-14 col-span-2">
+            <div class="p-10 pr-14 col-span-2 overflow-y-scroll">
               <div class="flex space-x-3 serif mt-20">
                 <span
                   :class="{ 'bg-gray-300': lang === 'pt' }"
@@ -194,7 +194,7 @@
           <div v-if="tabOpened === 3" class="h-full relative">
             <iframe
               :src="
-                hotelData.video + '?autoplay=1&portrait=false&controls=0&loop=1'
+                hotelData.video + 'autoplay=1&portrait=false&controls=0&loop=1'
               "
               class="absolute top-0 left-0 w-full h-full"
               frameborder="0"
