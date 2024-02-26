@@ -43,6 +43,8 @@
 import conf from "../conf";
 import content from "../content/content.json";
 
+alert('last changes')
+
 const { data } = await useAsyncData(
   "menu",
   () => content.pt.menu
