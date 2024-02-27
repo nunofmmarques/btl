@@ -21,7 +21,7 @@
         disableOnInteraction: true,
       }"
     >
-      <SwiperSlide v-for="item in data" :key="item">
+      <SwiperSlide v-for="item in teste" :key="item">
         <a :href="item.hotel">
           <img
             :src="useAsset('img/' + item.hotel + '/menu.png')"
@@ -43,11 +43,13 @@
 import conf from "../conf";
 import content from "../content/content.json";
 
-const { data } = await useAsyncData(
-  "menu",
-  () => content.pt.menu
-  //queryContent(conf.CONTENT).findOne()
-);
+const { data: teste } = await useAsyncData("menu", () => content.pt.menu);
+
+console.log("setup");
+
+onMounted(async () => {
+  console.log("onMounted");
+});
 
 function useAsset(path) {
   const assets = import.meta.glob("~/assets/img/**", {

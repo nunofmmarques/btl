@@ -151,7 +151,7 @@
         </Transition>
         <Transition>
           <div v-if="tabOpened === 1" class="grid grid-cols-4 h-full">
-            <div class="p-10 pr-14 col-span-2 overflow-y-scroll">
+            <div class="p-10 pr-14 col-span-2 overflow-y-auto">
               <div class="flex space-x-3 serif mt-20">
                 <span
                   :class="{ 'bg-gray-300': lang === 'pt' }"
@@ -196,7 +196,7 @@
               :src="
                 hotelData.video + 'autoplay=1&portrait=false&controls=0&loop=1'
               "
-              class="absolute top-0 left-0 w-full h-full"
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-2/3 px-10"
               frameborder="0"
               allow="autoplay; fullscreen"
               allowfullscreen
