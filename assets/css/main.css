@@ -39,7 +39,7 @@ body {
 #__nuxt {
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   background-image: url("../img/fundo.png");
   background-size: 150%;
