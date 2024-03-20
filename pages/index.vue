@@ -5,7 +5,7 @@
   <div class="container">
     <header>
       <h1>
-        <img src="~/assets/img/logo_DHM.png" class="h-14 3xl:h-28" alt="logo" />
+        <img src="~/assets/img/logo_DHM.png" class="h-10 md:h-14 3xl:h-28" alt="logo" />
       </h1>
       <div>
         <h2 class="serif">À Descoberta de Portugal</h2>
@@ -14,11 +14,19 @@
     </header>
     <Swiper
       :modules="[SwiperAutoplay]"
-      :slides-per-view="4"
+      :slides-per-view="2"
       :loop="true"
       :autoplay="{
         delay: 8000,
         disableOnInteraction: true,
+      }"
+      :breakpoints="{
+        768: {
+          slidesPerView: 4,
+        },
+        320: {
+          slidesPerView: 2,
+        },
       }"
     >
       <SwiperSlide v-for="item in teste" :key="item">
@@ -70,20 +78,20 @@ function useAsset(path) {
 } */
 
 header {
-  @apply flex justify-between items-center py-3 mb-5 3xl:mb-20;
+  @apply flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center py-3 mb-5 3xl:mb-20;
 
   h2 {
-    @apply text-2xl text-right 3xl:text-6xl;
+    @apply text-lg md:text-2xl text-right 3xl:text-6xl;
   }
 
   h3 {
-    @apply text-sm text-right font-semibold 3xl:text-4xl 3xl:mt-5;
+    @apply text-sm text-center md:text-right font-semibold 3xl:text-4xl 3xl:mt-5;
   }
 }
 
 footer {
   p {
-    @apply text-[#B4B4B4] text-center font-thin mt-5 3xl:mt-16 3xl:text-4xl;
+    @apply text-[#B4B4B4] text-center font-thin mt-5 text-xs md:text-base max-w-64 mx-auto md:max-w-none 3xl:mt-16 3xl:text-4xl;
   }
 }
 
