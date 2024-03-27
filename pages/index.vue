@@ -43,6 +43,10 @@
         Por favor deslize para ver os nossos hotéis / Please scroll to see our
         hotels
       </p>
+      <div>
+        <h2 class="serif">À Descoberta de Portugal</h2>
+        <h3>www.dhmportugal.com</h3>
+      </div>
     </footer>
   </div>
 </template>
@@ -78,20 +82,27 @@ function useAsset(path) {
 } */
 
 header {
-  @apply flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center py-3 mb-5 3xl:mb-20;
+  @apply flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center py-3 mb-0 md:mb-5 3xl:mb-20;
 
   h2 {
-    @apply text-lg md:text-2xl text-right 3xl:text-6xl;
+    @apply hidden md:block text-lg md:text-2xl text-right 3xl:text-6xl;
   }
 
   h3 {
-    @apply text-sm text-center md:text-right font-semibold 3xl:text-4xl 3xl:mt-5;
+    @apply hidden md:block text-sm text-center md:text-right font-semibold 3xl:text-4xl 3xl:mt-5;
   }
 }
 
 footer {
+  h2 {
+    @apply md:hidden mt-3 text-lg md:text-2xl text-center 3xl:text-6xl;
+  }
+
+  h3 {
+    @apply md:hidden text-sm text-center md:text-right font-semibold 3xl:text-4xl 3xl:mt-5;
+  }
   p {
-    @apply text-[#B4B4B4] text-center font-thin mt-5 text-xs md:text-base max-w-64 mx-auto md:max-w-none 3xl:mt-16 3xl:text-4xl;
+    @apply text-[#B4B4B4] text-center font-thin mt-1 text-xs md:text-base max-w-64 mx-auto md:max-w-none 3xl:mt-16 3xl:text-4xl;
   }
 }
 

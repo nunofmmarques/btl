@@ -70,7 +70,7 @@
               </svg>
             </li>
             <li
-              class="btn col-start-2"
+              class="btn"
               :class="{ 'bg-gray-300': tabOpened === 3 }"
               v-if="hotelData.video"
               @click="tabOpened = 3"
@@ -189,7 +189,24 @@
             <img
               :src="useAsset('img/' + hotel + '/galeria.png')"
               :alt="hotel"
+              class="hidden md:block"
             />
+            <Swiper
+              :modules="[SwiperAutoplay]"
+              :slides-per-view="1"
+              :loop="true"
+              :autoplay="{
+                delay: 8000,
+                disableOnInteraction: true,
+              }"
+            >
+              <SwiperSlide v-for="index in 6" :key="index">
+                  <img
+                    :src="useAsset('img/' + hotel + '/gal_'+index+'.jpg')"
+                    :alt="hotel"
+                  />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </Transition>
         <Transition>
@@ -300,7 +317,7 @@ function useAsset(path) {
     }
 
     ul {
-      @apply grid grid-cols-3 md:flex gap-3 mt-5 md:mt-20  md:flex-col w-full md:w-fit 3xl:space-y-5;
+      @apply grid grid-cols-2 md:flex gap-3 mt-5 md:mt-20  md:flex-col w-full md:w-fit 3xl:space-y-5;
       .btn {
         padding-right: 0.25rem;
         text-transform: uppercase;
@@ -328,7 +345,7 @@ function useAsset(path) {
 }
 
 .btn {
-  @apply border border-gray-950 rounded-3xl w-full px-5 py-1 text-xl 3xl:text-4xl 3xl:py-3 2xl:px-10 3xl:rounded-[10rem] hover:bg-gray-200 transition-all cursor-pointer flex flex-row items-center justify-between;
+  @apply border border-gray-950 rounded-3xl w-full px-5 py-1 text-sm md:text-xl 3xl:text-4xl 3xl:py-3 2xl:px-10 3xl:rounded-[10rem] hover:bg-gray-200 transition-all cursor-pointer flex flex-row items-center justify-between;
 }
 
 .btn_back {
@@ -337,5 +354,18 @@ function useAsset(path) {
 #player {
   height: 100% !important;
   background-color: rgb(241, 241, 241) !important;
+}
+.swiper {
+  flex: 1;
+  width: 100%;
+  padding-bottom: 0.75rem;
+}
+
+.swiper-slide {
+  height: 100%;
+  display: contents;
+  img {
+    @apply hover:opacity-80 transition-all cursor-pointer object-fill h-full;
+  }
 }
 </style>
